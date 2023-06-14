@@ -2,12 +2,7 @@
 
 /* eslint-disable */
 import path from "path";
-import url from "url";
-
 import HTMLWebpackPlugin from "html-webpack-plugin";
-
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const mode =
   process.env.NODE_ENV === "production" ? "production" : "development";
@@ -17,7 +12,7 @@ export default {
   mode: mode,
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve("dist"),
     clean: true,
   },
   devServer: {

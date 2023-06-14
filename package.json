@@ -1,21 +1,20 @@
 {
-  "name": "my-webpack-project",
+  "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "My webpack project",
   "type": "module",
   "scripts": {
     "test": "jest --colors",
-    "build": "webpack --mode=production --node-env=production",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
+    "build": "NODE_ENV=production webpack --mode production",
     "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "start": "npx webpack serve"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FasTrss/frontend-project-11.git"
   },
-  "author": "Kirill Mokevnin",
+  "author": "Azamat Shirlyanov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hexlet-boilerplates/webpack-package/issues"
@@ -63,7 +62,7 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
-    "bootstrap": "^5.3.0",
+    "bootstrap": "^5.2.3",
     "npm-check-updates": "^16.6.2"
   }
 }
