@@ -12,7 +12,7 @@ export default {
   mode: mode,
   entry: "./src/index.js",
   output: {
-    path: path.resolve("dist"),
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   devServer: {

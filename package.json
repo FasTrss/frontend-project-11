@@ -49,6 +49,7 @@
     "jest-environment-jsdom": "^29.3.1",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss-loader": "^7.3.3",
+    
     "postcss-preset-env": "^7.8.3",
     "prettier": "^2.7.1",
     "sass": "^1.63.4",
@@ -61,7 +62,7 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
-    "bootstrap": "^5.3.0",
+    "bootstrap": "^5.2.3",
     "npm-check-updates": "^16.6.2"
   }
 }
