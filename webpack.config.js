@@ -28,7 +28,6 @@ export default {
     new HTMLWebpackPlugin({
       template: 'index.html',
     }),
-    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
