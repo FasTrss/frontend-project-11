@@ -1,4 +1,3 @@
 import './styles.scss';
-import 'bootstrap'
-
-console.log('Hello World!');
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'bootstrap';
