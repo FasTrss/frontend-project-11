@@ -28,14 +28,13 @@
     },
     "testEnvironment": "jsdom"
   },
-  "main": "src/init.js",
+  "main": "src/index.js",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-env": "^7.20.2",
     "babel-jest": "^29.3.1",
     "babel-loader": "^9.1.2",
-    "bootstrap": "^5.3.0",
     "css-loader": "^6.8.1",
     "debug": "^4.3.4",
     "eslint": "^8.42.0",
@@ -63,6 +62,7 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
+    "bootstrap": "^5.3.0",
     "npm-check-updates": "^16.6.2"
   }
 }
