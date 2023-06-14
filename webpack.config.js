@@ -5,7 +5,7 @@ import path from 'path';
 import url from 'url';
 
 import HTMLWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin  from 'mini-css-extract-plugin'
+
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,7 +28,6 @@ export default {
     new HTMLWebpackPlugin({
       template: 'index.html',
     }),
-    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
@@ -45,7 +44,7 @@ export default {
       use: ['style-loader', 'css-loader', 'postcss-loader'] },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader'],
+        use: ['css-loader', 'sass-loader', 'postcss-loader'],
       },
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
