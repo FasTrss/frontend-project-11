@@ -1,5 +1,5 @@
 {
-  "name": "@hexlet/code",
+  "name": "my-webpack-project",
   "version": "1.0.0",
   "description": "My webpack project",
   "type": "module",
