@@ -114,13 +114,6 @@ const renderFormStatus = ({
       feedbackString.classList.remove('text-warning');
       feedbackString.classList.add('text-danger');
       input.classList.add('is-invalid');
-      feedbackString.textContent = i18nInstance.t('errors.invalidURL');
-      break;
-    case 'dublicatedURL':
-      feedbackString.classList.remove('text-warning');
-      feedbackString.classList.add('text-danger');
-      input.classList.add('is-invalid');
-      feedbackString.textContent = i18nInstance.t('errors.dublicatedURL');
       break;
     default:
       break;
