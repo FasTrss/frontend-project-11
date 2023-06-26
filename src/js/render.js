@@ -34,6 +34,11 @@ const createPosts = (state, i18nInstance) => {
     postLink.setAttribute('data-id', post.id);
     postLink.setAttribute('target', '_blank');
     postLink.setAttribute('rel', 'noopener noreferrer');
+    if (state.ui.readedPosts.has(post.id)) {
+      postLink.classList.add('fw-normal', 'link-secondary');
+    } else {
+      postLink.classList.add('fw-bold');
+    }
     postLink.textContent = post.title;
     btn.classList.add('btn', 'btn-outline-primary', 'btn-sm');
     btn.setAttribute('type', 'button');
