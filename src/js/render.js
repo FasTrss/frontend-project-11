@@ -88,6 +88,28 @@ const renderPosts = ({ posts }, state, i18nInstance) => {
   posts.append(postsList);
 };
 
+const renderModalWindow = (
+  value,
+  state,
+  { modalTitle, modalDescription, modalLink },
+) => {
+  const post = state.posts.find(({ id }) => id === value);
+  modalTitle.textContent = post.title;
+  console.log(`title - ${post.title}`);
+  modalDescription.textContent = post.description;
+  console.log(`title - ${post.description}`);
+  modalLink.setAttribute('href', post.link);
+  console.log(`title - ${post.link}`);
+};
+
+const renderReadedPosts = (readedPosts) => {
+  readedPosts.forEach((postId) => {
+    const post = document.querySelector(`a[data-id="${postId}"]`);
+    post.classList.remove('fw-bold');
+    post.classList.add('fw-normal', 'link-secondary');
+  });
+};
+
 const renderError = ({ feedbackString }, state, value, i18nInstance) => {
   if (value === '') {
     return;
@@ -125,25 +147,6 @@ const renderFormStatus = ({
   }
 };
 
-const renderModalWindow = (
-  value,
-  state,
-  { modalTitle, modalDescription, modalLink },
-) => {
-  const post = state.posts.find(({ id }) => id === value);
-  modalTitle.textContent = post.title;
-  modalDescription.textContent = post.description;
-  modalLink.setAttribute('href', post.link);
-};
-
-const renderReadedPosts = (readedPosts) => {
-  readedPosts.forEach((postId) => {
-    const post = document.querySelector(`a[data-id="${postId}"]`);
-    post.classList.remove('fw-bold');
-    post.classList.add('fw-normal', 'link-secondary');
-  });
-};
-
 export default (elements, state, i18nInstance) => (path, value) => {
   switch (path) {
     case 'formStatus': {
@@ -174,7 +177,7 @@ export default (elements, state, i18nInstance) => (path, value) => {
       renderReadedPosts(value);
       break;
     }
-    case 'ui.ModalWindow': {
+    case 'ui.modalWindow': {
       renderModalWindow(value, state, elements);
       break;
     }

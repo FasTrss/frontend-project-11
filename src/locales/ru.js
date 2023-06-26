@@ -11,7 +11,7 @@ export default {
     items: {
       feeds: 'Фиды',
       posts: 'Посты',
-      postButton: 'Просмотр ',
+      postButton: 'Просмотр',
     },
   },
 };
