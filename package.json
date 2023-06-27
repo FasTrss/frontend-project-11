@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/hexlet-boilerplates/webpack-package/issues"
   },
-  "homepage": "https://github.com/hexlet-boilerplates/webpack-package#readme",
+  "homepage": "https://github.com/FasTrss/frontend-project-11/blob/main/README.md",
   "jest": {
     "verbose": true,
     "testEnvironmentOptions": {
@@ -31,8 +31,6 @@
   "devDependencies": {
     "@webpack-cli/generators": "^3.0.7",
     "axios": "^1.4.0",
-    "babel-jest": "^29.3.1",
-    "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
     "debug": "^4.3.4",
     "eslint": "^8.42.0",

@@ -93,17 +93,14 @@ export default () => {
       elements.form.addEventListener('submit', (e) => {
         e.preventDefault();
         state.ui.submitDisabled = true;
+        state.formStatus = 'sending';
         const addedLinks = state.feeds.map((feed) => feed.link);
         const schema = makeSchema(addedLinks);
         const formData = new FormData(e.target);
         const input = formData.get('url').trim();
         schema
           .validate(input)
-          .then(() => {
-            state.error = '';
-            state.formStatus = 'sending';
-            return getAxiosResponse(input);
-          })
+          .then(() => getAxiosResponse(input))
           .then((response) => {
             const { feed, posts } = parse(response.data.contents);
             feed.link = input;
@@ -120,6 +117,8 @@ export default () => {
             state.error = handleError(err);
             state.formStatus = 'invalidURL';
             console.log(state.error);
+          })
+          .finally(() => {
             state.ui.submitDisabled = false;
           });
       });
