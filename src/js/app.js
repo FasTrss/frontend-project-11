@@ -29,21 +29,16 @@ const updatePosts = (state) => {
   const update = state.feeds.map((feed) => getAxiosResponse(feed.link))
     .then((response) => {
       const { feed, posts } = parse(response.data.contents);
-      const postsOfFeed = state.posts.filter(
-        ({ feedId }) => feedId === feed.id,
-      );
-      const linksFromState = postsOfFeed.map((post) => post.link);
-      const newPosts = posts.filter(
-        ({ link }) => !linksFromState.includes(link),
-      );
-      const newPostsWithIds = newPosts.map((post) => (
-        { ...post, id: uniqueId(), feedId: feed.id }
-      ));
-
+      const linksFromState = state.posts
+      .filter(({ feedId }) => feedId === feed.id)
+      .map((post) => post.link)
+      const newPostsWithIds = posts
+        .filter(({ link }) => !linksFromState.includes(link))
+        .map((post) => ({ ...post, id: uniqueId(), feedId: feed.id }));
       state.posts.unshift(...newPostsWithIds);
     })
     .catch((err) => console.log(err.message));
-  Promise.all(update).finally.setTimeout(() => updatePosts(state), 5000);
+  Promise.all(update).finally(() => setTimeout(() => updatePosts(state), 5000));
 };
 
 export default () => {

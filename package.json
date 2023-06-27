@@ -29,9 +29,6 @@
   },
   "main": "src/index.js",
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/eslint-parser": "^7.19.1",
-    "@babel/preset-env": "^7.20.2",
     "@webpack-cli/generators": "^3.0.7",
     "axios": "^1.4.0",
     "babel-jest": "^29.3.1",
